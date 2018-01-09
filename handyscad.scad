@@ -87,6 +87,16 @@ module hex_nut(dia) {
 	}
 }
 
+module jam_nut(dia) {
+	m=0.8*dia*0.6;
+	e=1.8*dia;
+	c=0.2*dia;
+	difference() {
+		cylinder_outer(h=m,d=e,$fn=6);
+		translate([0,0,-m/2]) cylinder_outer(h=m*2,d=dia);
+	}
+}
+
 module flat_washer(dia) {
 	t=0.1*dia;
 	difference() {
